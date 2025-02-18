@@ -1,0 +1,20 @@
+# Sample Contract 1
+Contract: Employment Agreement
+Date: 2024-03-15
+Parties: ACME Corporation and John Doe
+Type: Employment Contract
+
+Section: Term of Employment
+The term of employment shall commence on April 1, 2024, and continue for a period of one year unless terminated earlier in accordance with this Agreement.
+
+Section: Compensation
+The Employee shall receive an annual base salary of $75,000, payable in accordance with the Company's standard payroll practices.
+
+Section: Duties
+The Employee shall serve as Software Engineer and shall perform all duties and responsibilities typically associated with such position.
+
+Clause: Non-Disclosure
+The Employee agrees to maintain the confidentiality of all proprietary information obtained during employment.
+
+Clause: Governing Law
+This Agreement shall be governed by and construed in accordance with the laws of the State of California.

@@ -1,0 +1,53 @@
+from .common import os, genai, content, json
+
+def satisfied(thesis: str) -> bool:
+    """
+    Evaluates if a given statement is considered 'satisfactory'.
+
+    Args:
+        thesis: The statement to evaluate.
+
+    Returns:
+        True if the statement is considered satisfactory, False otherwise, or an error message if the process fails.
+    """
+    try:
+        generation_config = {
+            "temperature": 0.5,  # Lower temperature for more deterministic results
+            "top_p": 0.95,
+            "top_k": 40,
+            "max_output_tokens": 10,  # Limit output tokens for a simple boolean response
+            "response_schema": content.Schema(
+                type=content.Type.OBJECT,
+                properties={
+                    "is_satisfactory": content.Schema(
+                        type=content.Type.BOOLEAN,
+                    ),
+                },
+            ),
+            "response_mime_type": "application/json",
+        }
+
+        model = genai.GenerativeModel(
+            model_name="gemini-2.0-flash-exp",
+            generation_config=generation_config,
+            system_instruction="You are an expert at evaluating if a statement is satisfactory, return true if you think the statement is satisfactory and false otherwise.",
+        )
+
+        chat_session = model.start_chat(
+            history=[],
+        )
+
+        prompt = f"Is the following statement satisfactory? Respond with true or false.\nStatement: {thesis}"
+        response = chat_session.send_message(prompt)
+
+        try:
+            response_text = response.text.strip()
+            if not response_text.endswith('}'):
+                response_text += '}'
+            json_output = json.loads(response_text)
+            return json_output.get("is_satisfactory", "Error: Could not extract is_satisfactory value from json.")
+        except json.JSONDecodeError:
+             return f"Error: Could not decode json. The response is: {response.text}"
+
+    except Exception as e:
+        return f"An error occurred: {e}"

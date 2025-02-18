@@ -1,0 +1,20 @@
+# Sample Contract 2
+Contract: Non-Disclosure Agreement
+Date: 2024-03-15
+Parties: ACME Corporation and XYZ Ltd.
+Type: NDA
+
+Section: Confidential Information
+All information shared between the parties, including but not limited to trade secrets, customer data, and proprietary software code, shall be considered confidential.
+
+Section: Term
+This agreement shall remain in effect for a period of five (5) years from the date of execution.
+
+Clause: Permitted Use
+The receiving party may use confidential information solely for the purpose of evaluating potential business opportunities between the parties.
+
+Clause: Return of Materials
+Upon termination of this Agreement, all confidential materials shall be returned to the disclosing party or destroyed.
+
+Clause: Jurisdiction
+Any disputes arising from this Agreement shall be resolved in the courts of New York State.
