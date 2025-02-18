@@ -1,4 +1,4 @@
-# AI Function Compiler
+# Declarative Function Generator
 
 This project provides a tool that helps break down Python functions into smaller, maintainable components by analyzing code and implementing undefined functions using the Gemini API or direct implementation.
 
@@ -20,7 +20,7 @@ This project provides a tool that helps break down Python functions into smaller
 1. Clone the repository:
 ```bash
 git clone [your-repo-url]
-cd ai_compiler
+cd DeclarativeFunctionAgent
 ```
 
 2. Install required packages:
@@ -96,7 +96,3 @@ The tool automatically determines how each function should be implemented:
 ## Contributing
 
 Feel free to submit issues and enhancement requests!
-
-## License
-
-[Your License Here]
